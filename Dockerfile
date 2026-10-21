@@ -21,9 +21,10 @@ EXPOSE 8000
 # Render搬運公私鑰
 RUN mkdir -p config && \
     ln -sf /etc/secrets/public_lofi.pem ./config/public_lofi.pem && \
-    ln -sf /etc/secrets/private_lofi.pem ./config/private_lofi.pem && \
-    ln -sf /etc/secrets/name_config.ini ./config/name_config.ini && \
-    ln -sf /etc/secrets/plc_simulator_default.ini ./config/plc_simulator_default.ini
+    ln -sf /etc/secrets/private_lofi.pem ./config/private_lofi.pem
+
+    #ln -sf /etc/secrets/name_config.ini ./config/name_config.ini && \
+    #ln -sf /etc/secrets/plc_simulator_default.ini ./config/plc_simulator_default.ini
 
 
 
