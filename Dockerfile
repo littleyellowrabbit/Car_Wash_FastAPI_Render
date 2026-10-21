@@ -18,5 +18,12 @@ RUN mkdir -p /app/data
 # 6. 宣告容器開放 8000 連接埠
 EXPOSE 8000
 
+# Render搬運公私鑰
+RUN mkdir -p config && \
+    ln -sf /etc/secrets/public_lofi.pem ./config/public_lofi.pem && \
+    ln -sf /etc/secrets/private_lofi.pem ./config/private_lofi.pem
+
+
+
 # 7. 啟動指令（透過 Uvicorn 啟動，注意 host 必須是 0.0.0.0）
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
